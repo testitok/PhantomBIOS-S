@@ -1,0 +1,46 @@
+## @file
+#  PhantomBIOS
+##
+
+[Defines]
+  INF_VERSION                    = 1.25
+  BASE_NAME                      = PhantomBIOS
+  FILE_GUID                      = 9854b881-f309-457d-a73f-19ea5d2b1776 #Copy and paste the GUID from http://www.guidgen.com/ here
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+[Sources]
+  PhantomBIOS.c
+  Functions/Files.c
+  Functions/PartitionsRead.c
+  Functions/WritePartitions.c
+  Functions/FileExist.c
+  Functions/OverwriteFile.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  
+[LibraryClasses]
+  UefiApplicationEntryPoint  
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib  
+  UefiLib
+  PrintLib  
+  DevicePathLib
+  FileHandleLib  
+  MemoryAllocationLib
+  
+[Guids]
+
+[Ppis]
+
+[Protocols]
+  gEfiLoadedImageProtocolGuid  
+  gEfiSimpleFileSystemProtocolGuid
+  gEfiBlockIoProtocolGuid
+
+[FeaturePcd]
+
+[Pcd]
